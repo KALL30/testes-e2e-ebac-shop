@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+import DadosCheckout from '../support/page_objects/Dados-checkout';
+import Dados from '../support/page_objects/Dados-checkout'
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     /*  Como cliente 
@@ -10,12 +12,24 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         E validando minha compra ao final */
 
     beforeEach(() => {
-        cy.visit('/')
+        cy.visit('http://lojaebac.ebaconline.art.br/')
+
+        //cy.get('#username').type('aluno_ebac@teste.com')
+        //cy.get('#password').type('teste@teste.com')
+        //cy.get('.woocommerce-form > .button').click()
     });
 
-    it('Deve fazer um pedido na loja Ebac Shop de ponta a ponta', () => {
-        Modificação repositorio 2.1
+    it('Deve fazer o primeiro pedido na loja Ebac Shop, adicionar ao carrinho e fazer checkout', () => {
+        
+    
+        //describe('PRIMEIRO PEDIDO')
+        DadosCheckout.Checkouts()
+
+        //describe('Checkout do primeiro Pedido')
+        DadosCheckout.ConfirmaçãoCheckout()
+
     });
+
 
 
 })
