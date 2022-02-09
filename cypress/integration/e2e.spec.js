@@ -1,6 +1,9 @@
 /// <reference types="cypress" />
 import DadosCheckout from '../support/page_objects/Dados-checkout';
-import Dados from '../support/page_objects/Dados-checkout'
+const dadosCheck3 = require('../fixtures/Dados-de-checkout.json')
+
+
+
 
 context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
     /*  Como cliente 
@@ -21,13 +24,45 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
 
     it('Deve fazer o primeiro pedido na loja Ebac Shop, adicionar ao carrinho e fazer checkout', () => {
         
-    
         //describe('PRIMEIRO PEDIDO')
         DadosCheckout.Checkouts()
 
         //describe('Checkout do primeiro Pedido')
         DadosCheckout.ConfirmaçãoCheckout()
 
+    });
+
+    it('Deve fazer o segundo pedido, adicionar ao carrinho e fazer o checkout - Usando a massa de dados', () => {
+          
+        //describe('SEGUNDO PEDIDO')
+        DadosCheckout.Checkouts2()
+
+       // describe('Checkout do segundo pedido')
+        DadosCheckout.ConfirmaçãoChechout2('Nalva', 'Sales', 'Naturaspar', 'Brasil', 'Av. Coqui', 'Bloco07 apt 22', 'Recife', 'Pernambuco', '51163487', '8197665308', 'TEste2@ebac.com')
+       
+    });
+
+    it.only('Deve fazer o terceiro pedido, adicionar ao carrinho e fazer o checkout - Usando lista de dados', () => {
+
+         //describe('TERCEIRO PEDIDO')
+         DadosCheckout.Checkouts3()
+        
+        // describe('Checkout do terceiro pedido')
+        DadosCheckout.ConfirmaçãoChechout3 
+        ( dadosCheck3[0].nome,
+        dadosCheck3[0].sobrenome,
+        dadosCheck3[0].empresa,
+        dadosCheck3[0].pais,
+        dadosCheck3[0].endereco,
+        dadosCheck3[0].complemento,
+        dadosCheck3[0].cidade,
+        dadosCheck3[0].estado,
+        dadosCheck3[0].cep,
+        dadosCheck3[0].telefone,
+        dadosCheck3[0].email )
+
+       
+        
     });
 
 
