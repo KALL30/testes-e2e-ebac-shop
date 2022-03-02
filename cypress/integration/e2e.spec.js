@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import DadosCheckout from '../support/page_objects/Dados-checkout';
+import DadosCheckout from '../support/page_objects/Dados-checkout'
 const dadosCheck3 = require('../fixtures/Dados-de-checkout.json')
 
 
@@ -48,20 +48,18 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
          DadosCheckout.Checkouts3()
         
         // describe('Checkout do terceiro pedido')
-        DadosCheckout.ConfirmaçãoChechout3 
-        ( dadosCheck3[0].nome,
-        dadosCheck3[0].sobrenome,
-        dadosCheck3[0].empresa,
-        dadosCheck3[0].pais,
-        dadosCheck3[0].endereco,
-        dadosCheck3[0].complemento,
-        dadosCheck3[0].cidade,
-        dadosCheck3[0].estado,
-        dadosCheck3[0].cep,
-        dadosCheck3[0].telefone,
-        dadosCheck3[0].email )
-
-       
+        DadosCheckout.ConfirmaçãoChechout3
+           (dadosCheck3[0].nome,
+            dadosCheck3[0].sobrenome,
+            dadosCheck3[0].empresa,
+            dadosCheck3[0].pais,
+            dadosCheck3[0].endereco,
+            dadosCheck3[0].complemento,
+            dadosCheck3[0].cidade,
+            dadosCheck3[0].estado,
+            dadosCheck3[0].cep,
+            dadosCheck3[0].telefone,
+            dadosCheck3[0].email,)
         
     });
 
