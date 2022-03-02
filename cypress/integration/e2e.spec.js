@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 import DadosCheckout from '../support/page_objects/Dados-checkout'
 const dadosCheck3 = require('../fixtures/Dados-de-checkout.json')
+var faker = require('faker-br');
 
 
 
@@ -42,7 +43,7 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
        
     });
 
-    it.only('Deve fazer o terceiro pedido, adicionar ao carrinho e fazer o checkout - Usando lista de dados', () => {
+    it('Deve fazer o terceiro pedido, adicionar ao carrinho e fazer o checkout - Usando lista de dados', () => {
 
          //describe('TERCEIRO PEDIDO')
          DadosCheckout.Checkouts3()
@@ -60,6 +61,18 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
             dadosCheck3[0].cep,
             dadosCheck3[0].telefone,
             dadosCheck3[0].email,)
+        
+    });
+
+    it.only('Deve fazer o quarto pedido, adicionar ao carrinho e fazer o checkou - Usando', () => {
+        
+        //describre('QUARTO PEDIDO')
+        DadosCheckout.Checkouts4()
+        
+
+
+        //describre('Checkout do quarto pedido')
+        DadosCheckout.ConfirmaçãoChechout4()
         
     });
 

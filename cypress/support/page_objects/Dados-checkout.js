@@ -103,18 +103,26 @@ class EnderecoDados {
         cy.get('#place_order').click()
         cy.get('.page-title').should('contain', 'Pedido rec')
 
-
-
-
-
-
-       
-
-
-     
-
     }
 
+    Checkouts4(Produto4) {
+
+        cy.get('#primary-menu > .menu-item-629 > a').click()
+        cy.get(' .product-block')
+            .eq(3)
+            .click()
+        cy.get('.button-variable-item-XS').click()
+        cy.get('.button-variable-item-Green').click()
+        cy.get('.input-text').clear().type('1')
+        cy.get('.single_add_to_cart_button').click()
+        cy.get('.woocommerce-message').should('contain', 'Ajax Full-Zip Sw')
+        cy.get('#cart > .dropdown-toggle').click()
+        cy.get('#cart > .dropdown-menu > .widget_shopping_cart_content > .mini_cart_content > .mini_cart_inner > .mcart-border > .buttons > .checkout').click()
     }
+
+    ConfirmaçãoChechout4()
+}
+
+
 
 export default new EnderecoDados() 
